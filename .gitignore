@@ -12,3 +12,5 @@ wheels/
 # RAG data
 input/
 db/
+output/
+log/

@@ -1,0 +1,26 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "mcp__rag__ingest_document",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash /home/masaya/rag/.claude/hooks/check-ingest-format.sh"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash /home/masaya/rag/.claude/hooks/log-output-write.sh"
+          }
+        ]
+      }
+    ]
+  }
+}
