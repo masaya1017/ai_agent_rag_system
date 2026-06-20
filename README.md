@@ -47,7 +47,7 @@ uv sync
 ### 2. Claude Code に MCP サーバーを登録
 
 ```bash
-claude mcp add rag -- uv run python3 /home/masaya/rag/server.py
+claude mcp add rag -- uv run python3 /home/masaya/rag/main.py
 ```
 
 登録後、Claude Code を再起動すると MCP ツール・スラッシュコマンド・サブエージェントが使えるようになります。
@@ -134,8 +134,10 @@ rag/
 ├── input/          # 取り込み対象ファイルを置く場所
 ├── output/         # サブエージェントの検索結果が保存される
 ├── db/             # ChromaDB のデータ（自動生成）
-├── server.py       # MCP サーバー本体
-├── ingest.py       # CLIインジェスト用スクリプト
+├── main.py         # エントリーポイント（MCPサーバー起動）
+├── src/
+│   ├── server.py   # MCP サーバー本体
+│   └── ingest.py   # CLIインジェスト用スクリプト
 └── .claude/
     ├── agents/
     │   ├── search-personnel.md   # 人材検索サブエージェント定義
@@ -161,7 +163,7 @@ rag/
 **方法 2: CLI スクリプト（ディレクトリ一括）**
 
 ```bash
-uv run python3 ingest.py /path/to/documents/
+uv run python3 src/ingest.py /path/to/documents/
 ```
 
 **方法 3: MCP ツールで直接取り込む**

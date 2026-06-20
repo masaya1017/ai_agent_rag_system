@@ -18,7 +18,7 @@ tools: Bash, Write
 cd /home/masaya/rag && uv run python3 - <<'PYEOF'
 import sys
 from pathlib import Path
-sys.path.insert(0, str(Path("/home/masaya/rag")))
+sys.path.insert(0, str(Path("/home/masaya/rag/src")))
 from server import search_documents
 query = "QUERY_PLACEHOLDER"
 results = search_documents(query + " スキル 経歴 担当業務 実績", n_results=8)

@@ -17,7 +17,7 @@ from pptx import Presentation
 from mcp.server.fastmcp import FastMCP
 
 # ---- 設定 ----------------------------------------------------------------
-DB_PATH = Path(__file__).parent / "db"
+DB_PATH = Path(__file__).parent.parent / "db"
 MODEL_NAME = "intfloat/multilingual-e5-large"  # 日本語対応の多言語埋め込みモデル
 CHUNK_SIZE = 500   # チャンクあたりの文字数
 CHUNK_OVERLAP = 50  # チャンク間のオーバーラップ文字数
